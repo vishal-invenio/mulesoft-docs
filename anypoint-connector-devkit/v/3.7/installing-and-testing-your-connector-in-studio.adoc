@@ -5,7 +5,7 @@ Having built a project with the Anypoint DevKit plugin, you can install the skel
 
 The steps of this procedure are:
 
-. Set required @Connector annotations.
+. Set required `@Connector` annotations.
 . Add a "put in barn" operation to connector.
 . Document the "put in barn" operation.
 . Build the connector project and Install it using the Anypoint DevKit plugin.
