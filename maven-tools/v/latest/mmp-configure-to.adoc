@@ -1,0 +1,209 @@
+= To Configure Mule Maven Plugin
+
+[TIP]
+To configure Maven to access the MuleSoft Customer Repository, you need to make additions to the `settings.xml config file on all workstations that require access. Your `.m2 directory may already contain a configuration file called `settings.xml`. Note that this file is not mandatory; Maven uses default parameters if the file is not present. If you don't have a `settings.xml file at all, create it inside the `~/.m2 folder.
+
+== To Populate Your Local Maven Repository
+
+If the project is being built outside Studio, it is necessary to manually add some required JARs which cannot be accessed publicly through Maven. +
+Be sure to avoid duplicating jars in your project to prevent classloading errors.
+
+In Mule Enterprise Edition:
+
+* Navigate to $MULE_HOME/bin.
+** %MULE_HOME%\bin in Windows
+** $MULE_HOME/bin in Linux/Unix.
+* Run the populate_m2_repo command from a command line.
+** populate_m2_repo.cmd <my-test-m2-repository> (Windows)
+** ./populate_m2_repo <my-test-m2-repository> (Linux/Unix)
+:: :: Being my-m2-test-repository a M2 repository that must not already exist in the current directory.
+
+[NOTE]
+You may encounter errors if your `MULE_HOME is set to a path containing spaces. It is recommended that you select a `MULE_HOME location that does not contain spaces.
+
+This populates your M2 repository with all required dependencies.
+
+== To Enable Mulesoft Plugins
+
+You can modify either your project file (POM) or your `settings.xml file. Edit the desired configuration file to include the following:
+
+[source, xml, linenums]
+----
+<settings>
+    <pluginGroups>
+        <pluginGroup>org.mule.tools</pluginGroup>
+    </pluginGroups>
+    ...
+</settings>
+----
+
+Then add the Maven dependency for the Plugin:
+
+[source, xml, linenums]
+----
+<plugin>
+  <groupId>org.mule.tools.maven</groupId>
+  <artifactId>mule-maven-plugin</artifactId>
+  <version>2.1.1</version>
+</plugin>
+----
+
+
+== To Reference the Open Source MuleSoft Repositories
+
+Edit your `settings.xml or project file to include the following:
+
+[source, xml, linenums]
+----
+<repositories>
+...
+    <repository>
+        <id>mulesoft-releases</id>
+        <name>MuleSoft Repository</name>
+        <url>http://repository.mulesoft.org/releases/</url>
+        <layout>default</layout>
+    </repository>
+    <repository>
+        <id>mulesoft-snapshots</id>
+        <name>MuleSoft Snapshot Repository</name>
+        <url>http://repository.mulesoft.org/snapshots/</url>
+        <layout>default</layout>
+    </repository>
+...
+</repositories>
+----
+
+If the dependencies that you need are not already present, add them as shown.
+
+[source, xml, linenums]
+----
+<dependencies>
+...
+    <dependency>
+        <groupId>GROUP ID OF DEPENDENCY</groupId>
+        <artifactId>ARTIFACT ID OF DEPENDENCY</artifactId>
+        <version>VERSION OF DEPENDENCY</version>
+    </dependency>
+...
+<dependencies>
+----
+
+For example, if you were adding the dependency for the Salesforce connector:
+
+[source, xml, linenums]
+----
+<dependencies>
+...
+    <dependency>
+        <groupId>org.mule.modules</groupId>
+        <artifactId>mule-module-sfdc</artifactId>
+        <version>LATEST</version>
+    </dependency>
+...
+<dependencies>
+----
+
+== To Reference MuleSoft Public Repositories
+
+[source, xml, linenums]
+----
+<repositories>
+...
+    <repository>
+        <id>mulesoft-public</id>
+        <name>MuleSoft Public Repository</name>
+        <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+        <layout>default</layout>
+    </repository>
+...
+</repositories>
+----
+
+== To Reference MuleSoft Enterprise Repositories
+
+This task requires for you to purchase an enterprise license for Mule Runtime. +
+
+* Open the file <USER_HOME>/.m2/settings.xml for editing.
+* Add the following to the `servers section.
++
+[source, xml, linenums]
+----
+<server>
+ 
+    <id>MuleRepository</id>
+    <username>YOUR_ID</username>
+    <password>YOUR_PASSWORD</password>
+ 
+</server>
+----
+
+. Add the following to the `profiles section:
++
+[source, xml, linenums]
+----
+<profile>
+ 
+    <id>Mule</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+        <repository>
+            <id>MuleRepository</id>
+            <name>MuleRepository</name>
+            <url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+ 
+</profile>
+----
+
+If your organization purchased an enterprise license, and you can't access this repository, contact your administrator and request access credentials.
+
+== To Skip the Plugin Execution
+
+When true, skip causes plugin execution to be skipped. This property works with all plugin goals. The most common scenario is to configure its value to skipTests, so that you don't need to prepare your test infrastructure when you do not want your tests to run.
+
+[source, xml, linenums]
+----
+<plugin>
+    <groupId>org.mule.tools.maven</groupId>
+    <artifactId>mule-maven-plugin</artifactId>
+    <configuration>
+        <muleVersion>3.7.0</muleVersion>
+        <deploymentType>standalone</deploymentType>
+        <skip>${skipTests}</skip>
+    </configuration>
+    <executions>
+        <execution>
+            <id>deploy</id>
+            <phase>deploy</phase>
+            <goals>
+                <goal>deploy</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+----
+
+== To Skip the Plugin Deployment
+
+If you are not deploying to a Maven repository as part of your build, you can prevent the plugin execution by using:
+
+[source,xml,linenums]
+----
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-deploy-plugin</artifactId>
+  <configuration>
+    <skip>true</skip>
+  </configuration>
+</plugin>
+----

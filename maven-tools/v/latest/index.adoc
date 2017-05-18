@@ -1,0 +1,16 @@
+= About Mule Maven Plugin
+
+The mule-maven-plugin allows you to deploy Mule applications to different kinds of servers: Standalone (both Community and Enterprise), clustered, Anypoint Runtime Manager and CloudHub. +
+The most important capabilities provided by the plugin are running integration tests, and deploying applications to different environments.
+
+The plugin allows you to:
+
+* Deploy a Mule application to a local standalone server
+* Run integration tests in a local standalone deployment
+* Deploy Mule applications to Anypoint Runtime Manager
+* Deploy Mule applications to CloudHub
+* Deploy Mule applications to a local cluster
+
+The plugin supports both Community and Enterprise editions.
+
+By default, your local Maven installation stores configuration files in the directory $HOME/.m2 ( ~/.m2 on Unix and Mac; C:\Documents and Settings\<user>\.m2 on Windows). Keep in mind that in Linux or Mac .m2 is a hidden folder.

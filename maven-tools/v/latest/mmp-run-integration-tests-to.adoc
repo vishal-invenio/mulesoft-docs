@@ -1,0 +1,123 @@
+= To Run Integration Tests
+
+One of the most important uses for the plugin is to run integration tests on your integration application. Check the working example in src/it/standalone/example-integration-tests`.
+
+To run integration tests, the basic steps are the following:
+
+* Configure the maven-mule-plugin to pack your project in the Mule app format
+* Configure maven-failsafe-plugin to run integration tests and report
+* Configure mule-maven-plugin to deploy the project's packaged application to a new Mule server downloaded from a Maven repository.
+
+[source, xml, linenums]
+----
+<plugins>
+    <plugin>
+        <groupId>org.mule.tools.maven</groupId>
+        <artifactId>mule-app-maven-plugin</artifactId>
+        <version>2.1.1</version>
+        <extensions>true</extensions>
+    </plugin>
+    <plugin>
+        <groupId>org.mule.tools.maven</groupId>
+        <artifactId>mule-maven-plugin</artifactId>
+        <version>2.0</version>
+        <configuration>
+            <deploymentType>standalone</deploymentType>
+            <muleVersion>3.7.0</muleVersion>
+        </configuration>
+        <executions>
+            <execution>
+                <id>deploy</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                    <goal>deploy</goal>
+                </goals>
+            </execution>
+            <execution>
+                <id>undeploy</id>
+                <phase>post-integration-test</phase>
+                <goals>
+                    <goal>undeploy</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>integration-test</id>
+                <goals>
+                    <goal>integration-test</goal>
+                    <goal>verify</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+</plugins>
+----
+
+In this example, the plugin is configured for a standalone deployment, and performs the following tasks:
+
+* Configures one application for deployment
+* Configures two external libraries to be added to the server
+* Configures a domain to deploy
+* Defines a script to run before starting the server
+
+[source, xml, linenums]
+----
+<plugin>
+    <groupId>org.mule.tools.maven</groupId>
+    <artifactId>mule-maven-plugin</artifactId>
+    <version>2.1.1</version>
+    <configuration>
+        <muleVersion>3.7.0</muleVersion>                 <1>
+        <deploymentType>standalone</deploymentType>
+        <applications>
+            <application>${app.location}</application>   <2>
+        </applications>
+        <libs>
+          <lib>${basedir}/activemq-all-5.5.0.jar</lib>
+          <lib>${basedir}/activemq-core.jar</lib>        <3>
+        </libs>
+        <arguments>
+            <argument>-M-Dport.1=1337</argument>
+            <argument>-M-Dport.2=1338</argument>         <4>
+        </arguments>
+        <domain>${project.basedir}/domain</domain>       <5>
+        <script>${basedir}/script.groovy</script>        <6>
+        <community>false</community>                     <7>
+    </configuration>
+    <executions>
+        <execution>
+            <id>deploy</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+                <goal>deploy</goal>                      <8>
+            </goals>
+        </execution>
+        <execution>
+            <id>undeploy</id>
+            <phase>post-integration-test</phase>
+            <goals>
+                <goal>undeploy</goal>                    <9>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+----
+<1> Configures the Mule version.
+<2> This points either to a Mule application deployable zip file, or to an exploded Mule app folder. Defaults to the build-generated artifact.
+<3> External libs to be added to Mule Standalone.
+<4> Mule arguments (optional).
+<5> Domain to deploy. To add your application to the domain, you must configure your application manually (optional).
+<6> Optional Groovy script to run just before deployment.
+<7> Use Enterprise Edition.
+<8> Use the deploy goal to download Mule, install it and deploy the domain and applications.
+<9> Use the undeploy goal to undeploy de applications and stop Mule server.
+
+
+== See Also
+
+* link:/maven-tools/mmp-parameters-reference[Mule Maven Plugin Parameters Reference]

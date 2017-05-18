@@ -1,0 +1,62 @@
+= To Deploy Multiple Applications
+
+To deploy more than one application, you need to configure one plugin execution for each application to deploy.
+
+[source, xml, linenums]
+----
+<plugin>
+    <groupId>org.mule.tools.maven</groupId>
+    <artifactId>mule-maven-plugin</artifactId>
+    <version>2.1.1</version>
+    <configuration>
+        <muleVersion>3.8.0</muleVersion>
+        <deploymentType>standalone</deploymentType>
+    </configuration>
+    <executions>
+        <execution>
+            <id>deploy1</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+                <goal>deploy</goal>
+            </goals>
+            <configuration>
+                <application>${app.1.location}</application>
+            </configuration>
+        </execution>
+        <execution>
+            <id>deploy2</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+                <goal>deploy</goal>
+            </goals>
+            <configuration>
+                <application>${app.2.location}</application>
+            </configuration>
+        </execution>
+        <execution>
+            <id>undeploy1</id>
+            <phase>post-integration-test</phase>
+            <goals>
+                <goal>undeploy</goal>
+            </goals>
+            <configuration>
+                <application>${app.1.location}</application>
+            </configuration>
+        </execution>
+        <execution>
+            <id>undeploy2</id>
+            <phase>post-integration-test</phase>
+            <goals>
+                <goal>undeploy</goal>
+            </goals>
+            <configuration>
+                <application>${app.2.location}</application>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+----
+
+== See Also
+
+* link:/maven-tools/mmp-deploy-manage-to[To Manage Deployments]
