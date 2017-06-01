@@ -3,4 +3,5 @@
 * link:design-center[Design Center]
 * link:mule-user-guide[Mule Runtime User Guide]
 * link:connectors[Connectors]
+* link:anypoint-studio[Anypoint Studio]
 * link:maven-tools[Maven Tools]
