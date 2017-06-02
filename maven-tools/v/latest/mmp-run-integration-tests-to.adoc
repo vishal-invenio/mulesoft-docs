@@ -1,4 +1,4 @@
-= To Run Integration Tests
+= To Run Integration Tests (Mule Maven Plugin)
 
 One of the most important uses for the plugin is to run integration tests on your integration application. Check the working example in src/it/standalone/example-integration-tests`.
 

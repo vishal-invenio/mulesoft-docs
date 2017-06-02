@@ -1,4 +1,4 @@
-= To Deploy Mule Artifacts to a Central Maven Repository
+= To Deploy Mule Artifacts to a Central Maven Repository (Mule Maven Plugin)
 
 Using a central repository can save users' time when building applications. To deploy to a central repository, you need to deploy the Mule POM files and JAR artifacts to the desired repository.
 

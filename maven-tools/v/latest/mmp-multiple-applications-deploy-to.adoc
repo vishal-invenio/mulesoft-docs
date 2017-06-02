@@ -1,4 +1,4 @@
-= To Deploy Multiple Applications
+= To Deploy Multiple Applications (Mule Manven Plugin)
 
 To deploy more than one application, you need to configure one plugin execution for each application to deploy.
 

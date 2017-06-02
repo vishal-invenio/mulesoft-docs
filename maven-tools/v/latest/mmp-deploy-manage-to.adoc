@@ -1,4 +1,4 @@
-= To Manage Deployments
+= To Manage Deployments (Mule Maven Plugin)
 
 == To Deploy to a Mule Server Managed by Runtime Manager
 
