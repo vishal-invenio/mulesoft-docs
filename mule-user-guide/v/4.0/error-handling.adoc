@@ -1,6 +1,8 @@
 = Error Handling
 :keywords: error handling, exceptions, exception catching, exceptions
 
+
+//REVIEW: Update with error-handler scope example.
 Mule provides numerous options for handling errors. Faults that occur within Mule are referred to as *exceptions*; when an activity in your Mule instance fails, Mule throws an exception. To manage these exceptions, Mule allows you to configure *exception strategies*.
 
 Mule’s default exception strategy — which implicitly applies to all Mule applications — manages errors (i.e. thrown exceptions) in Mule flows. When your flows require more sophisticated error management, you can implement one or more exception strategies to construct precise, efficient protocols for handling errors.
