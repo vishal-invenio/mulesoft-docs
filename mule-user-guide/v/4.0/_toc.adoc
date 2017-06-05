@@ -11,7 +11,7 @@
 **** link:/mule-user-guide/v/4.0/about-event-source[About the Event Source]
 **** link:/mule-user-guide/v/4.0/about-event-processors[About Event Processors]
 ***** link:/mule-user-guide/v/4.0/about-operations[About Operations]
-***** link:/mule-user-guide/v/4.0/about-scopes[About Scopes]
+***** link:/mule-user-guide/v/4.0/scopes-concept[About Scopes]
 ***** link:/mule-user-guide/v/4.0/about-routers[About Routers]
 ***** link:/mule-user-guide/v/4.0/about-transformers[About Transformers]
 ***** link:/mule-user-guide/v/4.0/about-modules[About Modules]
