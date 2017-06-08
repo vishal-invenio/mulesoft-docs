@@ -70,7 +70,7 @@ Each flow can contain only one error handler, however this error handler can con
 
 == Reconnection Strategies
 
-Reconnection strategy behavior resembles that of error handling strategies, but reconnection strategies provide instructions specifically for reconnection attempts.
+Reconnection strategy behavior resembles that of error handling, but provides instructions specifically for reconnection attempts.
 
 // // QQ: Check if Until successful is still available in Mule4
 // === Until Successful Scope
