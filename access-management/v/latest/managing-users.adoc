@@ -30,11 +30,11 @@ Public key provided by the identity provider, used to sign the SAML assertion.
 +
 An arbitrary string value that identifies your Anypoint Platform organization. The typical value for this string is `<organizationDomain>.anypoint.mulesoft.com`.
 +
-. Expand Advanced Settings, and optionally fill in the following fields.
+. Expand Advanced Settings, and fill in the following fields.
 +
 * Username Attribute
 +
-Field name in the SAML AttributeStatements that maps to username. By default, the 'NameID' attribute in the SAML assertion is used.
+Field name in the SAML AttributeStatements that maps to username. By default, the 'NameID' attribute in the SAML assertion is used. You must specify a different attribute if not 'NameID'.
 +
 * First Name Attribute
 +
@@ -46,7 +46,7 @@ Field name in the SAML AttributeStatements that maps to Last Name.
 +
 * Email Attribute
 +
-Field name in the SAML AttributeStatements that maps to Email.
+Field name in the SAML AttributeStatements that maps to Email. _This is a mandatory field_ .
 +
 * Group Attribute
 +
