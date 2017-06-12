@@ -66,8 +66,6 @@ There can only be one On Error Retry scope in each Error Handler.
 
 Each flow can contain only one error handler, however this error handler can contain as many on error scopes as you see necessary. Except for On Error Retry scope. Only one of these is allowed per Error Handler block.
 
-== Other Ways of Handling Errors
-
 == Reconnection Strategies
 
 Reconnection strategy behavior resembles that of error handling, but provides instructions specifically for reconnection attempts.
