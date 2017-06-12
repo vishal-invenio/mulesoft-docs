@@ -19,6 +19,8 @@
 *** link:/mule-user-guide/v/4.0/error-handling[Error Handling Reference]
 **** link:/mule-user-guide/v/4.0/reconnection-strategy-about[About Reconnection Strategies]
 ***** link:/mule-user-guide/v/4.0/reconnection-strategy-reference[Reconnection Strategy Reference]
+*** link:/mule-user-guide/v/4.0/try-scope-concept[About Try Scope]
+*** link:/mule-user-guide/v/4.0/try-scope-xml-reference[Try Scope XML Reference]
 // COMBAK: Add a threading section
 //*** link:/mule-user-guide/v4.0/threading-in-mule[Threading reference]
 // QQ: Add a streaming framework section ??
