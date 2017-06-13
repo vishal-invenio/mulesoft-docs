@@ -27,7 +27,7 @@
 *** link:/connectors/common-to-perform-basic-file-operations[To Perform Basic File Operations]
 *** link:/connectors/ftp-to-read-write-mapped-content[To Write Mapped Content to a File]
 *** link:/connectors/ftp-about-matchers[About Matchers]
-*** link:/connectors/ftp-ref-connection-pooling[Connection Pooling Reference]
+*** link:/connectors/common-connection-pooling[Connection Pooling Reference]
 ** link:/connectors/http-about-http-connector[About the HTTP Connector]
 *** link:/connectors/http-trigger-app-from-browser[To Trigger an App from a Browser]
 *** link:/connectors/http-consume-web-service[To Consume a Web Service]
@@ -91,4 +91,8 @@
 *** link:/connectors/email-to-set-email-body-config[To Set Up the Body of Outbound Email]
 
 *** link:/connectors/common-to-match-file-properties[To Match File Properties]
+////
+
+////
+include::_toc_email.adoc[]
 ////
