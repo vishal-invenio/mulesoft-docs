@@ -126,18 +126,50 @@ For a detailed description of the update site's content visit the link:/anypoint
 
 == JIRA Ticket List for Anypoint Studio
 
-=== New Features
-
-
 === Bug Fixes
 
-=== Improvements
+* STUDIO-7679 - API Project import fails when importing several apis with domain
+* STUDIO-8968 - Cannot run maven projects with finalName/appName configured in mule plugins
+* STUDIO-9051 - Wrong validation error when adding global connector to MUnit test configuration
+* STUDIO-9052 - Validation issues in Anypoint Studio for oauth2 module
+* STUDIO-9060 - JSON schema relative reference for array items causes file not found
+* STUDIO-9063 - Empty .dwl file generated erroneously
+* STUDIO-9086 - Problem when doing multiple test connection with Derby JDBC
+* STUDIO-9087 - DB Stored Proc operation parameters get sorted breaking the stored procedure
+* STUDIO-9114 - Studio for Windows error when there is a literal unicode character in a DW script
+* STUDIO-9123 - [SE] SAP missing jar file error
+* STUDIO-9166 - Export Documents fails for large projects - Windows Studio
+* STUDIO-9200 - [SE] Studio showing confusing dialog title for API Sync
+* STUDIO-9201 - Update CXF library to 2.7.18 (same version from Mule 3.8+)
+* STUDIO-9216 - Generate Flows from WSDL is failing after upgrading the library
+* STUDIO-9217 - APIKit: Business groups is listing the users instead of the Organizations
+* STUDIO-9218 - [SE] Flow generation from WSDL fails when service name changes
+* STUDIO-9267 - Add empty fields validations in Publish to Exchange dialog
+* STUDIO-9268 - Add pop validation to alert users that the app will be deployed to Exchange
+* STUDIO-9271 - Add undefined default option when project does not have a classifier defined
+* STUDIO-9275 - Studio does not add TLS namespace when specifying a trust store for OAuth authorization
+* STUDIO-9295 - [SE] Maven variables in finalName prevent project deployment from Studio
+* STUDIO-9302 - APIKit does not work with Studio 6.3
+* STUDIO-9306 - Cannot deploy to Cloud from Studio using Mac
+* STUDIO-9384 - Problem with APIKit scaffold from zip file
 
+=== Enhancement Request
+
+* STUDIO-7267 - When mavenizing a project include in the pom src/main/api as source folder
+* STUDIO-8849 - Add Support to Import APIs from VCS from Exchange 2.0
+* STUDIO-8850 - Support version selection for RAML from VCS
+* STUDIO-8851 - API Sync modification for API Manager RAMLs
+* STUDIO-8852 - RAML Editor for APIs in VCS should be read only
+* STUDIO-8853 - Alter New Project wizard to select RAML from Exchange 2.0
+* STUDIO-8854 - Support publish Studio projects to Exchange 2.0
+* STUDIO-9129 - [Publish to Exchange 2.0] Create a dialog with artifact type, progress bar, information and cancellation button
+* STUDIO-9131 - [Publish to Exchange 2.0] Show an Exchange 2.0 link to the artifact after a successful publishing
+* STUDIO-9132 - [Publish to Exchange 2.0] Create reusable Login Widget
+* STUDIO-9141 - [VCS integration] Add support for "Import from VCS" *
 
 === Tasks
 
-
-=== Stories
+* STUDIO-9326 - Update Raml Java parser version 1.0.10 in Wizard and Raml editor (Studio 6.3)
 
 
 == Support
