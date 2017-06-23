@@ -178,6 +178,6 @@ For a detailed description of the update site's content visit the link:/anypoint
 ** Crowd Release Notes
 ** link:/anypoint-studio/v/6/import-api-def-dc[Import API RAML specs from Design Center].
 ** link:/anpoint-studio/v/6/exchange-integration[Publish Mule projects into Exchange].
-** Configure Exchange url.
+// ** Configure Exchange url.
 * Access link:http://forums.mulesoft.com/[MuleSoft’s Forum] to pose questions and get help from Mule’s broad community of users.
 * To access MuleSoft’s expert support team link:https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription[subscribe to Mule ESB Enterprise] and log in to MuleSoft’s link:http://www.mulesoft.com/support-login[Customer Portal].
