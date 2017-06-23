@@ -31,6 +31,7 @@
 *** link:/anypoint-studio/v/6/using-dataweave-in-studio[Using DataWeave in Studio]
 *** link:/anypoint-studio/v/6/studio-visual-debugger[Studio Visual Debugger]
 *** link:/anypoint-studio/v/6/exchange-integration[Integration with Exchange 2.0 Beta]
+*** link:/anypoint-studio/v/6/import-api-def-dc[To Import an API Definition from Design Center]
 *** link:/anypoint-studio/v/6/importing-and-exporting-in-studio[Importing and Exporting]
 *** link:/anypoint-studio/v/6/api-sync-reference[API Sync]
 *** link:/anypoint-studio/v/6/changing-runtimes-in-studio[Changing Runtimes in Studio]
