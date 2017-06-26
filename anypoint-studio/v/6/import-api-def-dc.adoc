@@ -35,4 +35,4 @@ APIKit generates the Flow based on the API definition imported from Design Cente
 
 * link:/getting-started/implement-and-test[To Implement and Test an API].
 * link:/apikit/[About APIKit]
-* link:/getting-started/exchange-integration[Integration with Exchange 2.0 Beta].
+* link:https://beta-anypt.docs-stgx.mulesoft.com/getting-started/ex2-studio[Integration with Exchange 2.0 Beta].
