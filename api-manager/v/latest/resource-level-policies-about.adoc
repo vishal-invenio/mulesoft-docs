@@ -1,5 +1,7 @@
 = About Resource Level Policies
 
+this page makes extensive assumptions about the user's knowledge. "Expressions" are introduced without any explanation of where they are put. One assumes in the myPolicy.xml - or is it in the RAML? One small example snippet will go a very long way and save thousands of hours for developers across the world - including precious time within MuleSoft support & services. Please consider an example
+
 Using Mule 3.8.1 and later, you can apply one or more out-of-the-box policies to the resource- and method-level of an API that meets the following conditions:
 
 * The API has a RAML endpoint. 
